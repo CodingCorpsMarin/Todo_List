@@ -1,0 +1,26 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+        this post from being posted</h2>
+    <div id="error-center">
+    <p>
+    <% @post.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+    </p>
+    </div>
+  </div>
+  <% end %>
+
+<center>
+  <div class="field">
+    <br>
+    <%= f.text_area :posts, placeholder: "Write in here..", class: 'text-box'%>
+  </div>
+
+    <%= f.submit 'Submit',  class: 'btn' %>
+<br>
+<br>
+<% end %>
+</center>

@@ -1,0 +1,39 @@
+<center>
+
+<div id="font-padding">
+</div>
+
+
+  <h1>My To Do List!</h1>
+
+
+<font size= 6>
+<%= link_to 'New activity?', new_post_path %>
+</font>
+<br>
+<br>
+<div class='things'>
+<table>
+    <th>Name</th>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.posts %></td>
+    <td><%= link_to 'Show', post, class: 'links' %></td>
+
+  <% if post.user == current_user %>
+    <td><%= link_to 'Edit', [:edit, post], class: 'links' %></td>
+
+
+ <td><%= link_to "Done", post, remote: true, method: :delete, data: { confirm: "You sure?" }%></td>
+  <% end %>
+  </tr>
+<% end %>
+</div>
+</table>
+
+<br>
+
+</center>
+
+

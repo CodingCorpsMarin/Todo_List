@@ -1,0 +1,22 @@
+<div id="font-padding">
+<center>
+
+<p id="notice"><%= notice %></p>
+
+
+<p>
+<font size= 6>
+<ol>
+  <b>Activity:</b>
+  <%= @post.posts %>
+</ol>
+
+</font-size>
+</p>
+
+<div id="link_sizes">
+<%= link_to 'Edit', edit_post_path(@post), class: 'links' %> |
+<%= link_to 'Back', posts_path, class: 'links' %>
+</div>
+</center>
+</div>
